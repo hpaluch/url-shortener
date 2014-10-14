@@ -15,7 +15,7 @@ To run tests:
 
 	lein test
 
-To run url shortener (note - you will need to replace localhost in src/url_shortener/core.clj with your url):
+To run url shortener (note - for non local use you may need  to replace http://localhost in src/url_shortener/core.clj with your url/port):
 
 	lein run
 
@@ -33,6 +33,15 @@ On different terminal try:
 
 	# result from http://www.linux.cz is stored in out.txt
 
+You may also check your redis using telnet:
+
+	telnet 127.0.0.1 6379
+	keys *
+	...
+	get /asdf
+	# $17
+	# http://google.com
+	quit
 
 See original code/text at: http://adambard.com/blog/a-clojure-url-shortener-service/
 
