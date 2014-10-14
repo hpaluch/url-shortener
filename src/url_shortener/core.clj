@@ -15,7 +15,7 @@
   (let [rand-str (hash-url path)]
     (redis/wcar nil
       (redis/set (str "/" rand-str) path))
-    (str "http://mydomain.com/" rand-str)))
+    (str "http://localhost:8080/" rand-str)))
 
 (defn handle-create [{path :uri :as request}]
   (if (.isValid validator (apply str (rest path)))
